@@ -1,0 +1,44 @@
+import React, { useEffect, useState } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import NavBar from '../components/NavBar.jsx'
+import Home from '../components/Home.jsx'
+import Footer from '../components/Footer.jsx'
+import SubjectPage from '../components/SubjectPage.jsx'
+import Syllabus from '../components/Syllabus.jsx'
+import ResourceFolderPage from '../components/ResourceFolderPage.jsx'
+
+function App() {
+  const [theme, setTheme] = useState(() => {
+    const storedTheme = localStorage.getItem('theme')
+    if (storedTheme === 'light' || storedTheme === 'dark') {
+      return storedTheme
+    }
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  })
+
+  useEffect(() => {
+    localStorage.setItem('theme', theme)
+    document.documentElement.classList.toggle('dark', theme === 'dark')
+    document.body.style.backgroundColor = theme === 'dark' ? '#0f172a' : '#f9fafb'
+    document.body.style.color = theme === 'dark' ? '#e2e8f0' : '#111827'
+  }, [theme])
+
+  const handleToggleTheme = () => {
+    setTheme((currentTheme) => (currentTheme === 'dark' ? 'light' : 'dark'))
+  }
+
+  return (
+    <BrowserRouter>
+      <NavBar theme={theme} onToggleTheme={handleToggleTheme} />
+      <Routes>
+        <Route path="/" element={<Home theme={theme} />} />
+        <Route path="/syllabus" element={<Syllabus theme={theme} />} />
+        <Route path="/subjects/:semester/:subjectSlug" element={<SubjectPage theme={theme} />} />
+        <Route path="/subjects/:semester/:subjectSlug/:termSlug" element={<ResourceFolderPage theme={theme} />} />
+      </Routes>
+      <Footer theme={theme} />
+    </BrowserRouter>
+  )
+}
+
+export default App
