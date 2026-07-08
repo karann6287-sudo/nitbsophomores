@@ -7,27 +7,31 @@ export default function NavBar({ theme, onToggleTheme }) {
 
   return (
     <header className="text-white shadow-lg border-b border-white/10 bg-linear-to-r from-slate-950 via-blue-950 to-sky-800">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between backdrop-blur-sm">
-        <div className="flex items-center space-x-3">
+     <div className="max-w-6xl mx-auto px-5 md:px-6 py-3 flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-3">
+       <div className="flex items-center justify-center md:justify-start space-x-3 w-full md:w-auto">
           <img
             src={manitLogo}
             alt="Electrical Engineering MANIT"
-            className="h-11 w-11 rounded-full object-cover ring-2 ring-white/80 shadow-md shadow-black/20"
+            className="h-9 w-9 md:h-11 md:w-11 rounded-full object-cover ring-2 ring-white/80 shadow-md shadow-black/20"
           />
-          <div>
-            <div className="text-lg font-semibold">NITBSophomores</div>
-            <div className="text-sm text-sky-100/90">Electrical Engineering</div>
+         <div>
+          <div className="text-base md:text-lg font-semibold">
+                  NITBSophomores
+          </div>
+          <div className="text-xs md:text-sm text-sky-100/90">
+                  Electrical Engineering
+          </div>
           </div>
         </div>
 
-        <nav className="flex items-center space-x-5 text-sm md:text-base font-medium">
+        <nav className="flex items-center justify-center md:justify-end gap-3 md:gap-5 text-sm md:text-base font-medium w-full md:w-auto flex-wrap">
           <Link to="/" className="transition-colors text-white/90 hover:text-cyan-200">Home</Link>
           <a href="/content/Syllabus.pdf" target="_blank" rel="noreferrer" className="transition-colors text-white/90 hover:text-cyan-200">Syllabus</a>
 
           <button
             type="button"
             onClick={onToggleTheme}
-            className="inline-flex items-center justify-center h-9 w-9 rounded-full border border-white/20 bg-white/10 text-white transition-colors hover:bg-white/20 hover:border-white/30"
+            className="inline-flex items-center justify-center h-8 w-8 md:h-9 md:w-9 rounded-full border border-white/20 bg-white/10 text-white transition-colors hover:bg-white/20 hover:border-white/30"
             aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
             title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
           >
