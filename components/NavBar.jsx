@@ -23,7 +23,7 @@ export default function NavBar({ theme, onToggleTheme }) {
         <nav className="flex items-center space-x-5 text-sm md:text-base font-medium">
           <Link to="/" className="transition-colors text-white/90 hover:text-cyan-200">Home</Link>
           <a href="/content/Syllabus.pdf" target="_blank" rel="noreferrer" className="transition-colors text-white/90 hover:text-cyan-200">Syllabus</a>
-          <Link to="/source-code" className="transition-colors text-white/90 hover:text-cyan-200">Source Code</Link>
+
           <button
             type="button"
             onClick={onToggleTheme}
