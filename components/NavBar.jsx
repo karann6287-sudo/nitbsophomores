@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import manitLogo from '../assets/MANIGTT.png'
+import { syllabusUrl } from '../resourceLibrary'
 
 export default function NavBar({ theme, onToggleTheme }) {
   const isDark = theme === 'dark'
@@ -26,7 +27,14 @@ export default function NavBar({ theme, onToggleTheme }) {
 
         <nav className="flex items-center justify-center md:justify-end gap-3 md:gap-5 text-sm md:text-base font-medium w-full md:w-auto flex-wrap">
           <Link to="/" className="transition-colors text-white/90 hover:text-cyan-200">Home</Link>
-          <a href="/content/Syllabus.pdf" target="_blank" rel="noreferrer" className="transition-colors text-white/90 hover:text-cyan-200">Syllabus</a>
+          <a
+             href={syllabusUrl}
+              target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors text-white/90 hover:text-cyan-200"
+              >
+                 Syllabus
+              </a>
 
           <button
             type="button"

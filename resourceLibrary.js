@@ -3,6 +3,8 @@ const pdfModules = import.meta.glob('./content/**/*.pdf', {
   import: 'default',
 })
 
+export const syllabusUrl = pdfModules['./content/Syllabus.pdf']
+
 const preferredTermDefinitions = [
   {
     slug: 'mini-tests',
