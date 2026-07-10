@@ -65,12 +65,14 @@ export default function ResourceFolderPage({ theme }) {
                 {term.files.length > 0 ? (
                   term.files.map((file) => (
                     <a
-                      key={file.relativePath}
-                      href={file.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className={`rounded-3xl border p-5 transition-transform duration-200 hover:-translate-y-1 ${isDark ? 'border-slate-700 bg-slate-900' : 'border-slate-200 bg-white'}`}
-                    >
+  key={file.relativePath}
+  href={file.url}
+  className={`rounded-3xl border p-5 transition-transform duration-200 hover:-translate-y-1 ${
+    isDark
+      ? 'border-slate-700 bg-slate-900'
+      : 'border-slate-200 bg-white'
+  }`}
+>
                       <div className="mt-4">
                         <h3 className="text-base font-semibold leading-snug">{getSubjectFileTitle(file.fileName)}</h3>
                         <p className={`mt-2 text-sm ${isDark ? 'text-slate-300' : 'text-gray-600'}`}>
