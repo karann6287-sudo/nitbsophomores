@@ -6,6 +6,7 @@ import Footer from '../components/Footer.jsx'
 import SubjectPage from '../components/SubjectPage.jsx'
 import Syllabus from '../components/Syllabus.jsx'
 import ResourceFolderPage from '../components/ResourceFolderPage.jsx'
+import PdfViewerPage from '../components/PdfViewerPage.jsx'
 
 function App() {
   const [theme, setTheme] = useState(() => {
@@ -35,6 +36,10 @@ function App() {
         <Route path="/syllabus" element={<Syllabus theme={theme} />} />
         <Route path="/subjects/:semester/:subjectSlug" element={<SubjectPage theme={theme} />} />
         <Route path="/subjects/:semester/:subjectSlug/:termSlug" element={<ResourceFolderPage theme={theme} />} />
+        <Route
+              path="/viewer/:semester/:subjectSlug/:termSlug/:fileIndex"
+              element={<PdfViewerPage theme={theme} />}
+/>
       </Routes>
       <Footer theme={theme} />
     </BrowserRouter>

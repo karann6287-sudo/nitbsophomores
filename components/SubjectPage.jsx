@@ -1,29 +1,29 @@
 import React, { useMemo } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { getSubjectResourceTerms } from '../resourceLibrary.js'
+import { getSubjectResourceTerms } from '../src/resourceLibrary.js'
 
-const regularResourceGroups = [
-  {
-    slug: 'mini-tests',
-    title: 'MINI TESTS',
-  },
-  {
-    slug: 'mid-terms',
-    title: 'MID TERMS',
-  },
-  {
-    slug: 'end-terms',
-    title: 'END TERMS',
-  },
-  {
-    slug: 'notes',
-    title: 'NOTES',
-  },
-  {
-    slug: 'assignments',
-    title: 'ASSIGNMENTS',
-  },
-]
+// const regularResourceGroups = [
+//   {
+//     slug: 'mini-tests',
+//     title: 'MINI TESTS',
+//   },
+//   {
+//     slug: 'mid-terms',
+//     title: 'MID TERMS',
+//   },
+//   {
+//     slug: 'end-terms',
+//     title: 'END TERMS',
+//   },
+//   {
+//     slug: 'notes',
+//     title: 'NOTES',
+//   },
+//   {
+//     slug: 'assignments',
+//     title: 'ASSIGNMENTS',
+//   },
+// ]
 
 export const subjectData = {
   semester3: {
@@ -53,10 +53,6 @@ export const subjectData = {
     },
     'instrumentation-lab': {
       title: 'Instrumentation Lab',
-      kind: 'lab',
-    },
-    'em-1-lab': {
-      title: 'EM-1 Lab',
       kind: 'lab',
     },
     'emec-lab': {
