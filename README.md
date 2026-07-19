@@ -8,7 +8,7 @@
 
 NITBSophomores is a centralized platform built for **Electrical Engineering students of MANIT Bhopal** to access semester-wise study materials, previous year papers, notes, books, assignments, and lab manuals in one place.
 
-🌐 **Live Website:** **https://nitbsophomores.vercel.app**
+🌐 **Live Website:** **https://nitbsophomores.netlify.app/**
 
 ---
 
