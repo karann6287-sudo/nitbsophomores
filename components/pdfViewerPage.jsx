@@ -31,7 +31,15 @@ export default function PdfViewerPage({ theme }) {
     )
   }
 
-  const file = term.files[Number(fileIndex)]
+  const index = Number(fileIndex);
+
+console.log("fileIndex:", fileIndex);
+console.log("index:", index);
+console.log("term:", term);
+
+const file = term?.files?.[index];
+
+console.log("file:", file);
 
   if (!file) {
     return (
